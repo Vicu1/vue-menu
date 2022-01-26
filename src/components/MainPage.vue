@@ -1,7 +1,6 @@
 <script>
-
 export default {
-  name: "App",
+  name: "MainPage",
 
   data: () => {
     return {
@@ -16,7 +15,19 @@ export default {
 </script>
 
 <template>
-  <v-app>
+  <v-sheet height="100vh" class="overflow-hidden" style="position: relative">
+    <v-container class="fill-height">
+      <v-row align="center" justify="center">
+        <v-btn
+          color="pink"
+          style="position: absolute; top: 10px; right: 10px"
+          dark
+          @click.stop="drawer = !drawer"
+        >
+          Menu
+        </v-btn>
+      </v-row>
+    </v-container>
     <v-navigation-drawer v-model="drawer" absolute>
       <v-list-item>
         <v-list-item-content>
@@ -49,10 +60,5 @@ export default {
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <div style="position: relative; left: 270px">
-      <router-view></router-view>
-    </div>
-  </v-app>
+  </v-sheet>
 </template>
-
-
