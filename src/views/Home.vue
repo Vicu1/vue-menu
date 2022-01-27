@@ -15,7 +15,7 @@ export default {
     friends: ["Sandra Adams", "Britta Holt"],
     isUpdating: false,
     peopleName: "Midnight Crew",
-    people: []
+    people: [],
   }),
 
   watch: {
@@ -51,7 +51,7 @@ export default {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        this.people = data.map(item => ({name: item.title}));
+        this.people = data.map((item) => ({ name: item.title }));
       } catch (e) {
         console.error(e);
       }
