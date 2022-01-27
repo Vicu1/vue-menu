@@ -49,7 +49,7 @@ export default {
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <div style="position: relative; left: 270px">
+    <div style="position: relative; ">
       <router-view></router-view>
     </div>
   </v-app>

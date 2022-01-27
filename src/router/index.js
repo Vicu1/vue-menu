@@ -1,31 +1,31 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import MainPage from "@/components/MainPage";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "MainPage",
-    component: MainPage,
+    redirect: "/home",
   },
   {
     path: "/home",
     name: "Home",
-    component: () =>
-      import("../views/Home.vue"),
+    component: () => import("../views/Home.vue"),
   },
   {
     path: "/about",
     name: "About",
-    component: () =>
-      import("../views/About.vue"),
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/about/:category",
+    component: () => import("../views/About.vue"),
   },
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes,
 });
 
