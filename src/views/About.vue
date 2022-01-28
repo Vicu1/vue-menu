@@ -49,6 +49,8 @@ export default {
       },
     ],
     activeCategory: "ALL",
+
+    items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   }),
 
   computed: {
@@ -65,7 +67,6 @@ export default {
   mounted() {
     this.activeCategory = this.$route.params.category || "ALL";
   },
-
   methods: {
     setActiveCategory(category) {
       this.$router.push(`/about/${category}`);
@@ -78,58 +79,59 @@ export default {
 <template>
   <div class="about">
     <v-btn
-      style="margin: 10px 10px 0"
       color="primary"
       elevation="7"
       large
       outlined
       rounded
       @click="setActiveCategory(category)"
-      v-for="category of categories"
+      v-for="category in categories"
       :key="category"
     >
       {{ category }}
     </v-btn>
-    <v-hover v-slot="{ hover }">
-      <div class="cards-wrapper">
-        <v-card
-          style="position: relative"
-          class="mx-auto"
-          max-width="400px"
-          height="400"
-          outlined
-          v-for="(item, index) in sortedItems"
-          :key="index"
-        >
-          <v-list-item>
-            <v-list-item-content>
-              <v-img :src="item.src" width="100px" height="300px"></v-img>
-              <v-list-item-title class="text-h5 mb-1">
-                {{ item.name }}
-              </v-list-item-title>
-              <v-list-item-subtitle class="text-h5">
-                Price {{ item.price }}$
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          <v-card-actions v-if="hover">
-            <v-btn outlined text style="position: absolute"> Button </v-btn>
-          </v-card-actions>
-        </v-card>
-      </div>
-    </v-hover>
+    <v-row
+      class="fill-height"
+      align="center"
+      justify="center"
+      style="max-width: 1000px; margin: 0 auto"
+    >
+      <v-col v-for="(item, i) in sortedItems" :key="i" cols="12" md="4">
+        <v-hover v-slot="{ hover }">
+          <v-card
+            style="position: relative;"
+            class="mx-auto"
+            transition="slide-x-transition"
+            max-width="400px"
+            height="400"
+            outlined
+          >
+            <v-list-item>
+              <v-list-item-content>
+                <v-img :src="item.src" width="100px" height="300px"></v-img>
+                <v-list-item-title class="text-h5 mb-1">
+                  {{ item.name }}
+                </v-list-item-title>
+                <v-list-item-subtitle class="text-h5">
+                  Price {{ item.price }}$
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-slide-y-transition>
+              <v-card-actions v-if="hover">
+                <v-btn outlined text> Button </v-btn>
+              </v-card-actions>
+
+            </v-slide-y-transition>
+          </v-card>
+        </v-hover>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <style>
 .about {
   text-align: center;
-}
-.cards-wrapper {
-  row-gap: 10px;
-  max-width: 1200px;
-  margin: 20px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 }
 </style>

@@ -22,6 +22,10 @@ const routes = [
     path: "/about/:category",
     component: () => import("../views/About.vue"),
   },
+  {
+    path: "/table",
+    component: () => import("../views/Table.vue"),
+  },
 ];
 
 const router = new VueRouter({

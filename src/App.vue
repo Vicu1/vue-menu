@@ -9,6 +9,7 @@ export default {
       items: [
         { title: "Home", icon: "mdi-view-dashboard", path: "/home" },
         { title: "About", icon: "mdi-forum", path: "/about" },
+        { title: "Table", icon: "mdi-forum", path: "/table" },
       ],
     };
   },
