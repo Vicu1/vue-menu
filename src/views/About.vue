@@ -3,7 +3,7 @@ export default {
   name: "About",
 
   data: () => ({
-    categories: ["ALL", "COFFEE", "SANDWICH", "TEA", "DONUTS"],
+    categories: ["ALL", "COFFEE", "SANDWICH", "TEA", "DONUTS", "Meat"],
     cards: [
       {
         id: 1,
@@ -49,18 +49,18 @@ export default {
       },
     ],
     activeCategory: "ALL",
-
     items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   }),
 
   computed: {
     sortedItems() {
-      return this.cards.filter((item) => {
-        if (this.activeCategory !== "ALL") {
-          return item.category === this.activeCategory;
-        }
-        return item;
-      });
+      if (this.activeCategory === "ALL") {
+        return this.cards;
+      }
+      if (this.activeCategory !== this.categories) {
+        console.log("hi");
+      }
+      return this.cards.filter((item) => item.category === this.activeCategory);
     },
   },
 
@@ -96,36 +96,38 @@ export default {
       justify="center"
       style="max-width: 1000px; margin: 0 auto"
     >
-      <v-col v-for="(item, i) in sortedItems" :key="i" cols="12" md="4">
-        <v-hover v-slot="{ hover }">
-          <v-card
-            style="position: relative;"
-            class="mx-auto"
-            transition="slide-x-transition"
-            max-width="400px"
-            height="400"
-            outlined
-          >
-            <v-list-item>
-              <v-list-item-content>
-                <v-img :src="item.src" width="100px" height="300px"></v-img>
-                <v-list-item-title class="text-h5 mb-1">
-                  {{ item.name }}
-                </v-list-item-title>
-                <v-list-item-subtitle class="text-h5">
-                  Price {{ item.price }}$
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-slide-y-transition>
-              <v-card-actions v-if="hover">
-                <v-btn outlined text> Button </v-btn>
-              </v-card-actions>
-
-            </v-slide-y-transition>
-          </v-card>
-        </v-hover>
-      </v-col>
+      <div v-if="sortedItems.length">
+        <v-col v-for="(item, i) in sortedItems" :key="i" cols="12" md="4">
+          <v-hover v-slot="{ hover }">
+            <v-card
+              style="position: relative"
+              class="mx-auto"
+              transition="slide-x-transition"
+              max-width="400px"
+              height="400"
+              outlined
+            >
+              <v-list-item>
+                <v-list-item-content>
+                  <v-img :src="item.src" width="100px" height="300px"></v-img>
+                  <v-list-item-title class="text-h5 mb-1">
+                    {{ item.name }}
+                  </v-list-item-title>
+                  <v-list-item-subtitle class="text-h5">
+                    Price {{ item.price }}$
+                  </v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-slide-y-transition>
+                <v-card-actions v-if="hover">
+                  <v-btn outlined text> Button </v-btn>
+                </v-card-actions>
+              </v-slide-y-transition>
+            </v-card>
+          </v-hover>
+        </v-col>
+      </div>
+      <div v-else>Category is empty</div>
     </v-row>
   </div>
 </template>

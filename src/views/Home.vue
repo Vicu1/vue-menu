@@ -31,8 +31,7 @@ export default {
 
       try {
         const response = await fetch(url);
-        const data = await response.json();
-        this.people = data;
+        this.people = await response.json();
       } catch (e) {
         console.error(e);
       }
@@ -43,7 +42,12 @@ export default {
 
 <template>
   <div class="home">
-    <v-form ref="form" style="max-width: 1000px; position: absolute; left: 300px" lazy-validation>
+    <v-form
+      ref="form"
+      id="form"
+      style="max-width: 1000px; position: absolute; left: 300px"
+      lazy-validation
+    >
       <v-text-field
         v-model="model.name"
         :counter="10"
@@ -82,6 +86,4 @@ export default {
     </v-form>
   </div>
 </template>
-<style>
-
-</style>
+<style></style>

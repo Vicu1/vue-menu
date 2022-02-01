@@ -24,8 +24,9 @@ const routes = [
   },
   {
     path: "/table",
-    component: () => import("../views/Table.vue"),
+    component: () => import("../views/Desserts.vue"),
   },
+
 ];
 
 const router = new VueRouter({

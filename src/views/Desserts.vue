@@ -3,7 +3,6 @@ export default {
   name: "Table",
 
   data: () => ({
-    data: [],
     headers: [
       {
         text: "",
@@ -12,8 +11,7 @@ export default {
         value: "name",
       },
     ],
-
-    desserts: [
+    items: [
       {
         name: "Frozen Yogurt",
         calories: 159,
@@ -95,7 +93,6 @@ export default {
         iron: "6%",
       },
     ],
-
   }),
 
   async mounted() {
