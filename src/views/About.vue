@@ -53,14 +53,15 @@ export default {
   }),
 
   computed: {
-    sortedItems() {
+    filteredItems() {
       if (this.activeCategory === "ALL") {
         return this.cards;
-      }else if (!this.categories.includes(this.activeCategory)){
+      }
+      if (!this.categories.includes(this.activeCategory)){
         return false;
       }
+
       return this.cards.filter((item) => item.category === this.activeCategory);
-      
     },
   },
 
@@ -97,8 +98,8 @@ export default {
       justify="center"
       style="max-width: 1000px; margin: 0 auto"
     >
-      <div v-if="sortedItems.length">
-        <v-col v-for="(item, i) in sortedItems" :key="i"  md="5">
+      <div v-if="filteredItems.length">
+        <v-col v-for="(item, i) in filteredItems" :key="i"  md="5">
           <v-hover v-slot="{ hover }" >
             <v-card
               style="position: relative"
@@ -127,8 +128,8 @@ export default {
           </v-hover>
         </v-col>
       </div>
-      <div v-else-if="!sortedItems">
-        Category not Exist
+      <div v-else-if="!filteredItems">
+        Category doesn`t Exist
       </div>
       <div v-else>
         Category is empty
