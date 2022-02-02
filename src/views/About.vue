@@ -56,11 +56,11 @@ export default {
     sortedItems() {
       if (this.activeCategory === "ALL") {
         return this.cards;
-      }
-      if (this.activeCategory !== this.categories) {
-        console.log("hi");
+      }else if (!this.categories.includes(this.activeCategory)){
+        return false;
       }
       return this.cards.filter((item) => item.category === this.activeCategory);
+      
     },
   },
 
@@ -79,6 +79,7 @@ export default {
 <template>
   <div class="about">
     <v-btn
+    style="margin: 15px 10px 0"
       color="primary"
       elevation="7"
       large
@@ -97,19 +98,18 @@ export default {
       style="max-width: 1000px; margin: 0 auto"
     >
       <div v-if="sortedItems.length">
-        <v-col v-for="(item, i) in sortedItems" :key="i" cols="12" md="4">
-          <v-hover v-slot="{ hover }">
+        <v-col v-for="(item, i) in sortedItems" :key="i"  md="5">
+          <v-hover v-slot="{ hover }" >
             <v-card
               style="position: relative"
               class="mx-auto"
               transition="slide-x-transition"
-              max-width="400px"
               height="400"
               outlined
             >
               <v-list-item>
                 <v-list-item-content>
-                  <v-img :src="item.src" width="100px" height="300px"></v-img>
+                  <v-img :src="item.src" width="700px" height="300px"></v-img>
                   <v-list-item-title class="text-h5 mb-1">
                     {{ item.name }}
                   </v-list-item-title>
@@ -120,14 +120,19 @@ export default {
               </v-list-item>
               <v-slide-y-transition>
                 <v-card-actions v-if="hover">
-                  <v-btn outlined text> Button </v-btn>
+                  <v-btn style="margin-top: -70px" outlined text> Button </v-btn>
                 </v-card-actions>
               </v-slide-y-transition>
             </v-card>
           </v-hover>
         </v-col>
       </div>
-      <div v-else>Category is empty</div>
+      <div v-else-if="!sortedItems">
+        Category not Exist
+      </div>
+      <div v-else>
+        Category is empty
+      </div>
     </v-row>
   </div>
 </template>

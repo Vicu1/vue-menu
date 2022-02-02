@@ -8,6 +8,7 @@ export default {
       required: (v) => !!v || "This field is required",
       requiredSelect: (v) => !!v.length || "This field is required",
       maxLength: (v) => v.length <= 3 || "Select must be less than 3 items",
+      check: (v) => !!v || 'You must agree to continue!',
     },
     people: [],
   }),
@@ -50,13 +51,11 @@ export default {
     >
       <v-text-field
         v-model="model.name"
-        :counter="10"
         :rules="[rules.required]"
         label="Name"
       ></v-text-field>
       <v-text-field
         v-model="model.surname"
-        :counter="10"
         :rules="[rules.required]"
         label="Surname"
       ></v-text-field>
@@ -76,7 +75,7 @@ export default {
       </v-autocomplete>
       <v-checkbox
         v-model="model.checkbox"
-        :rules="[(v) => !!v || 'You must agree to continue!']"
+        :rules="[rules.check]"
         label="Do you agree?"
         required
       ></v-checkbox>
