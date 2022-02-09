@@ -42,6 +42,14 @@ export default {
       this.dialog = true;
       this.selectedItem = JSON.parse(JSON.stringify(item));
     },
+    saveData() {
+      this.dialog = false;
+      this.items.forEach( item => {
+        if (item.name === this.selectedItem.name){
+          item.address = this.selectedItem.address;
+        }
+      })
+    }
   },
 };
 </script>
@@ -114,7 +122,7 @@ export default {
           <v-btn color="blue darken-1" text @click="dialog = false">
             Close
           </v-btn>
-          <v-btn color="blue darken-1" text @click="dialog = false">
+          <v-btn color="blue darken-1" text @click="saveData()">
             Save
           </v-btn>
         </v-card-actions>
