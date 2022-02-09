@@ -19,6 +19,7 @@ export default {
     ],
     items: [],
     dialog: false,
+    index: 0,
     selectedItem: {
       address: {}
     },
@@ -38,17 +39,20 @@ export default {
   },
 
   methods: {
-    openModal(item) {
+    openModal(item, index) {
       this.dialog = true;
       this.selectedItem = JSON.parse(JSON.stringify(item));
+      this.index = index;
+      console.log(this.index);
     },
     saveData() {
       this.dialog = false;
-      this.items.forEach( item => {
-        if (item.name === this.selectedItem.name){
+      /* this.items.forEach( item => {
+        if (item.id === this.selectedItem.id){
           item.address = this.selectedItem.address;
         }
-      })
+      }) */
+      this.items[this.index].address = this.selectedItem.address;
     }
   },
 };
@@ -62,11 +66,11 @@ export default {
       :items-per-page="5"
       class="elevation-1"
     >
-      <template #item.address="{ item }">
+      <template #item.address="{ item, index }">
         <v-tooltip bottom>
           <template #activator="{ on, attrs }">
             <v-chip
-              @click="openModal(item)"
+              @click="openModal(item, index)"
               v-bind="attrs"
               v-on="on"
               link
