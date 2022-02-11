@@ -10,6 +10,7 @@ export default {
         { title: "Home", icon: "mdi-view-dashboard", path: "/home" },
         { title: "About", icon: "mdi-forum", path: "/about" },
         { title: "Table", icon: "mdi-forum", path: "/table" },
+        { title: "Details", icon: "mdi-forum", path: "/details" },
       ],
     };
   },

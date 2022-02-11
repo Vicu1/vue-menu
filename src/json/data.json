@@ -1,0 +1,397 @@
+[{
+        "model_id": 826,
+        "operation_type": "updated",
+        "created_at": "09.02.2022 10:49:02",
+        "author_name": "root",
+        "ip": "193.106.56.44",
+        "details": {
+            "old_values": {
+                "Start date": "30.01.2022 16:00:00",
+                "End date": "09.02.2022 16:00:00",
+                "Amount": "200.00",
+                "Comment": "Залог 300 ID 162/ оплата 100 ID 163 / долг 100"
+            },
+            "new_values": {
+                "Start date": "30.01.2022 16:00:00",
+                "End date": "10.02.2022 16:00:00",
+                "Amount": "220",
+                "Comment": "Залог 300 ID 162/ оплата 100 ID 163 / долг 120"
+            }
+        }
+    },
+    {
+        "model_id": 842,
+        "operation_type": "created",
+        "created_at": "09.02.2022 10:46:21",
+        "author_name": "root",
+        "ip": "193.106.56.44",
+        "details": {
+            "old_values": null,
+            "new_values": {
+                "Start date": "10.02.2022 18:00:00",
+                "End date": "11.02.2022 17:00:00",
+                "Car ID": "63",
+                "Collateral amount": "300",
+                "Address": "Продлили долг!!",
+                "Amount": "35",
+                "Client ID": "118",
+                "Is Paid": null,
+                "Author ID": "1",
+                "ID": "842"
+            }
+        }
+    },
+    {
+        "model_id": 841,
+        "operation_type": "updated",
+        "created_at": "09.02.2022 10:04:34",
+        "author_name": "root",
+        "ip": "193.106.56.44",
+        "details": {
+            "old_values": {
+                "Start date": "09.02.2022 11:00:00",
+                "End date": "10.02.2022 10:00:00",
+                "Comment": "Продлили",
+                "Address": "Продлили"
+            },
+            "new_values": {
+                "Start date": "09.02.2022 11:00:00",
+                "End date": "10.02.2022 10:00:00",
+                "Comment": "Продлили!долг!",
+                "Address": "Продлили!ДОЛГ"
+            }
+        }
+    },
+    {
+        "model_id": 841,
+        "operation_type": "created",
+        "created_at": "09.02.2022 10:04:12",
+        "author_name": "root",
+        "ip": "193.106.56.44",
+        "details": {
+            "old_values": null,
+            "new_values": {
+                "Start date": "09.02.2022 11:00:00",
+                "End date": "10.02.2022 10:00:00",
+                "Car ID": "104",
+                "Collateral amount": "300",
+                "Address": "Продлили",
+                "Amount": "30",
+                "Client ID": "211",
+                "Comment": "Продлили",
+                "Is Paid": null,
+                "Author ID": "1",
+                "ID": "841"
+            }
+        }
+    },
+    {
+        "model_id": 840,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 15:29:35",
+        "author_name": "root",
+        "ip": "88.155.112.116",
+        "details": {
+            "old_values": {
+                "Start date": "07.02.2022 17:00:00",
+                "End date": "10.02.2022 17:00:00",
+                "Car ID": "70"
+            },
+            "new_values": {
+                "Start date": "07.02.2022 17:00:00",
+                "End date": "10.02.2022 17:00:00",
+                "Car ID": "63"
+            }
+        }
+    },
+    {
+        "model_id": 840,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 15:10:34",
+        "author_name": "root",
+        "ip": "88.155.112.116",
+        "details": {
+            "old_values": {
+                "Start date": "07.02.2022 17:00:00",
+                "End date": "10.02.2022 17:00:00",
+                "Comment": null
+            },
+            "new_values": {
+                "Start date": "07.02.2022 17:00:00",
+                "End date": "10.02.2022 17:00:00",
+                "Comment": "Залог терминал 8к / оплата 2940 грн терминал 07.02.22"
+            }
+        }
+    },
+    {
+        "model_id": 810,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 14:15:47",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "21.01.2022 17:00:00",
+                "End date": "01.02.2022 23:00:00",
+                "Is Paid": null
+            },
+            "new_values": {
+                "Start date": "21.01.2022 17:00:00",
+                "End date": "01.02.2022 23:00:00",
+                "Is Paid": "1"
+            }
+        }
+    },
+    {
+        "model_id": 810,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 14:15:47",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Payment ID": null
+            },
+            "new_values": {
+                "Payment ID": "10.02.1562 07:23:06"
+            }
+        }
+    },
+    {
+        "model_id": 834,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 14:15:19",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "01.02.2022 17:00:00",
+                "End date": "05.02.2022 17:00:00",
+                "Is Paid": null
+            },
+            "new_values": {
+                "Start date": "01.02.2022 17:00:00",
+                "End date": "05.02.2022 17:00:00",
+                "Is Paid": "1"
+            }
+        }
+    },
+    {
+        "model_id": 834,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 14:15:19",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Payment ID": null
+            },
+            "new_values": {
+                "Payment ID": "10.02.1561 07:23:06"
+            }
+        }
+    },
+    {
+        "model_id": 840,
+        "operation_type": "created",
+        "created_at": "07.02.2022 13:26:40",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": null,
+            "new_values": {
+                "Start date": "07.02.2022 17:00:00",
+                "End date": "10.02.2022 17:00:00",
+                "Car ID": "70",
+                "Collateral amount": "300",
+                "Amount": "105",
+                "Client ID": "118",
+                "Is Paid": null,
+                "Author ID": "1",
+                "ID": "840"
+            }
+        }
+    },
+    {
+        "model_id": 839,
+        "operation_type": "created",
+        "created_at": "07.02.2022 11:53:47",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": null,
+            "new_values": {
+                "Start date": "08.02.2022 15:10:00",
+                "End date": "15.02.2022 15:10:00",
+                "Car ID": "62",
+                "Collateral amount": "200",
+                "Amount": "126",
+                "Client ID": "391",
+                "Comment": "продлили",
+                "Is Paid": null,
+                "Author ID": "1",
+                "ID": "839"
+            }
+        }
+    },
+    {
+        "model_id": 832,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 11:51:32",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "01.02.2022 14:35:00",
+                "End date": "10.02.2022 14:35:00",
+                "Comment": "Оплатил на карту 2737 грн (961 грн долг за Январь месяц ) 05.02.22\\ долг 1752 грн"
+            },
+            "new_values": {
+                "Start date": "01.02.2022 14:35:00",
+                "End date": "10.02.2022 14:35:00",
+                "Comment": "Оплатил на карту 2737 грн (961 грн долг за Январь месяц ) 05.02.22\\ долг 3516 грн"
+            }
+        }
+    },
+    {
+        "model_id": 832,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 11:47:21",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "01.02.2022 14:35:00",
+                "End date": "07.02.2022 14:35:00",
+                "Amount": "126.00",
+                "Comment": "Оплатил на карту 2737 грн (961 грн долг за Январь месяц ) 05.02.22\\долг 1752 грн"
+            },
+            "new_values": {
+                "Start date": "01.02.2022 14:35:00",
+                "End date": "10.02.2022 14:35:00",
+                "Amount": "189",
+                "Comment": "Оплатил на карту 2737 грн (961 грн долг за Январь месяц ) 05.02.22\\ долг 1752 грн"
+            }
+        }
+    },
+    {
+        "model_id": 832,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 10:48:42",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "01.02.2022 14:35:00",
+                "End date": "07.02.2022 14:35:00",
+                "Comment": "Оплатил на карту 2737 грн 05.02.22"
+            },
+            "new_values": {
+                "Start date": "01.02.2022 14:35:00",
+                "End date": "07.02.2022 14:35:00",
+                "Comment": "Оплатил на карту 2737 грн (961 грн долг за Январь месяц ) 05.02.22\\долг 1752 грн"
+            }
+        }
+    },
+    {
+        "model_id": 837,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 08:49:53",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "07.02.2022 11:00:00",
+                "End date": "11.02.2022 11:00:00",
+                "Comment": "Залог терминал 8к/ оплата терминал 3920 грн 06.02.22"
+            },
+            "new_values": {
+                "Start date": "07.02.2022 11:00:00",
+                "End date": "11.02.2022 11:00:00",
+                "Comment": "Залог терминал 8к/ оплата терминал 3920 грн 07.02.22"
+            }
+        }
+    },
+    {
+        "model_id": 823,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 08:45:40",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "28.01.2022 18:30:00",
+                "End date": "06.02.2022 18:00:00",
+                "Comment": "Оплатил на карту 3к 01.02.22\\ оплатил на  карту.  2000 грн 04,02,22\\ оплатил на карту 4166 грн 06.02.22/ вернул залог 300 ID 176"
+            },
+            "new_values": {
+                "Start date": "28.01.2022 18:30:00",
+                "End date": "06.02.2022 18:00:00",
+                "Comment": "Оплатил на карту 3к 01.02.22\\ оплатил на  карту.  2000 грн 04,02,22\\ оплатил на карту 4166 грн 06.02.22(c учетом двух штрафов)/ вернул залог 300 ID 176"
+            }
+        }
+    },
+    {
+        "model_id": 838,
+        "operation_type": "created",
+        "created_at": "07.02.2022 08:39:45",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": null,
+            "new_values": {
+                "Start date": "07.02.2022 20:40:00",
+                "End date": "14.02.2022 20:40:00",
+                "Car ID": "76",
+                "Collateral amount": "300",
+                "Amount": "154",
+                "Client ID": "328",
+                "Comment": "Оплатит 10тго за 2 недели",
+                "Is Paid": null,
+                "Author ID": "1",
+                "ID": "838"
+            }
+        }
+    },
+    {
+        "model_id": 836,
+        "operation_type": "updated",
+        "created_at": "07.02.2022 08:35:23",
+        "author_name": "root",
+        "ip": "46.219.111.133",
+        "details": {
+            "old_values": {
+                "Start date": "09.02.2022 12:20:00",
+                "End date": "23.02.2022 12:20:00",
+                "Comment": "Оплатила на карту 11к нгрн 07.02.22"
+            },
+            "new_values": {
+                "Start date": "09.02.2022 12:20:00",
+                "End date": "23.02.2022 12:20:00",
+                "Comment": "Залог Терминал 8к \\ Оплатила на карту 11к нгрн 07.02.22"
+            }
+        }
+    },
+    {
+        "model_id": 837,
+        "operation_type": "created",
+        "created_at": "07.02.2022 08:32:21",
+        "author_name": "root",
+        "ip": "88.155.112.116",
+        "details": {
+            "old_values": null,
+            "new_values": {
+                "Start date": "07.02.2022 11:00:00",
+                "End date": "11.02.2022 11:00:00",
+                "Car ID": "81",
+                "Collateral amount": "300",
+                "Amount": "140",
+                "Client ID": "511",
+                "Comment": "Залог терминал 8к/ оплата терминал 3920 грн 06.02.22",
+                "Is Paid": null,
+                "Author ID": "1",
+                "ID": "837"
+            }
+        }
+    }
+]
