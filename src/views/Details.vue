@@ -8,6 +8,12 @@ export default {
   }),
 
   mounted() {
+    this.myjson.forEach(element => {
+      if (element.details.old_values['Start date'] === element.details.new_values['Start date']){
+        this.$refs.item.style.color = 'red';
+      }
+    });
+    
   },
 }
 </script>
@@ -17,19 +23,36 @@ export default {
     <div class="container">
       <div class="old_data">
         <h1>OLD</h1>
-        <div v-for="(item, index) of myjson" :key="item">
+        <div v-for="(item) of myjson" :key="item">
           <div>
-            {{ index }}
-            {{ item.details.old_values}} 
+           <p>
+             {{ item.details.old_values}} 
+            </p>
           </div> 
         </div>
       </div>
       <div class="new_data">
         <h1>NEW</h1>
-        <div v-for="(item, index) of myjson" :key="item">
-          <div>
-            {{ index }}
-            {{ item.details.new_values}} 
+        <div v-for="(item) of myjson" :key="item">
+          <div ref='item'>
+            <p>
+             ID: {{ item.details.new_values.ID}} 
+            </p>
+            <p>
+             Amount: {{ item.details.new_values.Amount}} 
+            </p>
+            <p>
+             Start date: {{ item.details.new_values['Start date']}} 
+            </p>
+            <p>
+             End date: {{ item.details.new_values['End date']}} 
+            </p>
+            <p>
+             Comment: {{ item.details.new_values['Comment']}} 
+            </p>
+            <p>
+             Address: {{ item.details.new_values['Address']}} 
+            </p>
           </div> 
         </div>
       </div>
@@ -44,10 +67,14 @@ h1{
 .old_data{
   margin-right: 20px;
 }
+
 .container{
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+p{
+  margin: 0;
 }
 </style>
