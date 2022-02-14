@@ -39,19 +39,14 @@ export default {
   },
 
   methods: {
-    openModal(item, index) {
+    openModal(item) {
       this.dialog = true;
       this.selectedItem = JSON.parse(JSON.stringify(item));
-      this.index = index;
       console.log(this.index);
     },
     saveData() {
       this.dialog = false;
-      /* this.items.forEach( item => {
-        if (item.id === this.selectedItem.id){
-          item.address = this.selectedItem.address;
-        }
-      }) */
+      this.index = this.items.findIndex(item => item.id === this.selectedItem.id );
       this.items[this.index].address = this.selectedItem.address;
     }
   },
@@ -66,11 +61,11 @@ export default {
       :items-per-page="5"
       class="elevation-1"
     >
-      <template #item.address="{ item, index }">
+      <template #item.address="{ item }">
         <v-tooltip bottom>
           <template #activator="{ on, attrs }">
             <v-chip
-              @click="openModal(item, index)"
+              @click="openModal(item)"
               v-bind="attrs"
               v-on="on"
               link
