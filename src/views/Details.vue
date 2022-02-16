@@ -6,15 +6,16 @@ export default {
   data: () => ({
     json: json,
     array: [],
+    isSame: {},
   }),
   mounted() {
-    for (const item of json) {
+    this.json.forEach((item, index) => {
       for (const key in item.details.old_values) {
-        const isSame =
+        this.isSame[`${key}_${index}`] =
           item.details.old_values[key] === item.details.new_values[key];
-        console.log(isSame, key);
       }
-    }
+    });
+    this.$forceUpdate()
   },
 };
 </script>
@@ -27,9 +28,16 @@ export default {
         <div v-for="(item, index) of json" :key="index">
           <div
             v-for="(element, name) in item.details.old_values"
-            :key="element"
+            :key="`${name}_1`"
           >
-            <p :class="{ 'color-red': isSame }">{{ name }}: {{ element }}</p>
+            <p
+              :class="{
+                'color-green': isSame[`${name}_${index}`],
+                'color-red': !isSame[`${name}_${index}`],
+              }"
+            >
+              {{ name }}: {{ element }}
+            </p>
           </div>
         </div>
       </div>
@@ -38,9 +46,12 @@ export default {
         <div v-for="(item, index) of json" :key="index">
           <div
             v-for="(element, name) in item.details.new_values"
-            :key="element"
+            :key="`${name}_1`"
           >
-            <p>{{ name }}: {{ element }}</p>
+            <p :class="{
+                'color-green': isSame[`${name}_${index}`],
+                'color-red': !isSame[`${name}_${index}`],
+              }">{{ name }}: {{ element }}</p>
           </div>
         </div>
       </div>
@@ -48,7 +59,7 @@ export default {
 
     <div class="final__data">
       <div class="items" v-for="(item, index) of json" :key="index">
-        <div v-for="(element, name) in item.details.new_values" :key="element">
+        <div v-for="(element, name) in item.details.new_values"  :key="`${name}_1`">
           <p>
             <strong> {{ name }}: </strong>
             <span>{{ element }}</span

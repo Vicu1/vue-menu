@@ -1,19 +1,17 @@
 <script>
-
 export default {
   name: "App",
 
-  data: () => {
-    return {
-      drawer: null,
-      items: [
-        { title: "Home", icon: "mdi-view-dashboard", path: "/home" },
-        { title: "About", icon: "mdi-forum", path: "/about" },
-        { title: "Table", icon: "mdi-forum", path: "/table" },
-        { title: "Details", icon: "mdi-forum", path: "/details" },
-      ],
-    };
-  },
+  data: () => ({
+    drawer: null,
+    items: [
+      { title: "Home", icon: "mdi-view-dashboard", path: "/home" },
+      { title: "About", icon: "mdi-forum", path: "/about" },
+      { title: "Table", icon: "mdi-forum", path: "/table" },
+      { title: "Details", icon: "mdi-forum", path: "/details" },
+      { title: "Comments", icon: "mdi-forum", path: "/comments" },
+    ],
+  }),
 };
 </script>
 
@@ -51,10 +49,8 @@ export default {
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <div style="position: relative; ">
+    <div style="position: relative">
       <router-view></router-view>
     </div>
   </v-app>
 </template>
-
-
