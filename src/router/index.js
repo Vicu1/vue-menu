@@ -34,6 +34,10 @@ const routes = [
     path: "/comments",
     component: () => import("../views/Comments.vue"),
   },
+  {
+    path: "/gallery",
+    component: () => import("../views/Gallery.vue"),
+  },
 ];
 
 const router = new VueRouter({

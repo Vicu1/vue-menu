@@ -10,6 +10,7 @@ export default {
       { title: "Table", icon: "mdi-forum", path: "/table" },
       { title: "Details", icon: "mdi-forum", path: "/details" },
       { title: "Comments", icon: "mdi-forum", path: "/comments" },
+      { title: "Gallery", icon: "mdi-forum", path: "/gallery" },
     ],
   }),
 };
@@ -17,7 +18,7 @@ export default {
 
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" absolute>
+    <v-navigation-drawer mini-variant v-model="drawer"  absolute>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-icon>
