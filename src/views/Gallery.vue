@@ -29,7 +29,6 @@ export default {
     },
     async addFile() {
       this.images.push({ src: await this.toBase64(this.file) });
-      console.log(this.file);
       this.file = null;
     },
     changeImg(index) {
@@ -37,6 +36,9 @@ export default {
     },
     deleteImg(index) {
       this.images.splice(index, 1);
+      if (this.images.length === 0) {
+        console.log('hi');
+      }
     },
   },
 };
@@ -48,7 +50,11 @@ export default {
       <v-expand-transition>
         <v-sheet v-if="model != null" width="90%" class="mx-auto" tile>
           <v-row class="fill-height pt-4" align="center" justify="center">
+            <div v-if="this.images.length <= 0">
+              Not Photo
+            </div>
             <v-img
+              v-else
               height="400"
               :src="images[currentImg]"
               justify="center"
@@ -56,7 +62,6 @@ export default {
           </v-row>
         </v-sheet>
       </v-expand-transition>
-      <v-img src=""></v-img>
       <v-slide-group v-model="model" class="pa-4" show-arrows mandatory>
         <v-slide-item
           v-for="(item, index) of images"
@@ -87,6 +92,7 @@ export default {
       </v-slide-group>
       <div class="d-flex input">
         <v-file-input
+          multiple
           v-model="file"
           accept="image/*"
           label="Image"
