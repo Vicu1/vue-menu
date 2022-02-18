@@ -166,7 +166,7 @@ export default {
             </v-card>
           </v-col>
           <v-col cols="6" class="mt-10">
-            <v-row class="align-content-lg-space-between fill-height">
+            <v-row class="align-space-between justify-space-between align-content-space-between fill-height">
               <v-col cols="12" >
                 <v-progress-linear
                   color="white"
