@@ -48,10 +48,10 @@ export default {
   <div>
     <v-sheet class="mx-auto mt-5" elevation="8" max-width="800">
       <v-expand-transition>
-        <v-sheet v-if="model != null" width="90%" class="mx-auto" tile>
+        <v-sheet  width="90%" class="mx-auto" tile>
           <v-row class="fill-height pt-4" align="center" justify="center">
-            <div v-if="this.images.length <= 0">
-              Not Photo
+            <div v-if="(this.images.length <= 0)">
+              Gallery is empty
             </div>
             <v-img
               v-else
@@ -92,7 +92,6 @@ export default {
       </v-slide-group>
       <div class="d-flex input">
         <v-file-input
-          multiple
           v-model="file"
           accept="image/*"
           label="Image"
