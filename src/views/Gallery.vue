@@ -15,6 +15,7 @@ export default {
       { src: require("@/assets/bg1.jpeg") },
       { src: require("@/assets/bg2.jpeg") },
       { src: require("@/assets/bg3.jpeg") },
+      { src: require("@/assets/bg3.jpeg") },
     ],
   }),
 
