@@ -1,7 +1,8 @@
 <script>
+/*import OfferCreate from "./components/OfferCreate";*/
 export default {
   name: "App",
-
+ /* components: {OfferCreate},*/
   data: () => ({
     drawer: null,
     items: [
@@ -52,6 +53,8 @@ export default {
     </v-navigation-drawer>
     <div style="position: relative">
       <router-view></router-view>
+
     </div>
+<!--    <offer-create/>-->
   </v-app>
 </template>
