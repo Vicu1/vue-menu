@@ -5,7 +5,6 @@ export default {
     model: null,
     file: null,
     currentImg: 0,
-    arr: [],
     images: [
       { src: require("@/assets/bg1.jpeg") },
       { src: require("@/assets/bg2.jpeg") },
@@ -30,6 +29,7 @@ export default {
     },
     async addFile() {
       this.images.push({ src: await this.toBase64(this.file) });
+      console.log(this.file);
       this.file = null;
     },
     changeImg(index) {
@@ -46,11 +46,9 @@ export default {
   <div>
     <v-sheet class="mx-auto mt-5" elevation="8" max-width="800">
       <v-expand-transition>
-        <v-sheet width="90%" class="mx-auto" tile>
+        <v-sheet v-if="model != null" width="90%" class="mx-auto" tile>
           <v-row class="fill-height pt-4" align="center" justify="center">
-            <div v-if="!images.length">Gallery is Empty</div>
             <v-img
-              v-else
               height="400"
               :src="images[currentImg]"
               justify="center"
@@ -65,33 +63,30 @@ export default {
           :key="index"
           v-slot="{ active, toggle }"
         >
-          <v-hover v-slot="{ hover }">
-            <v-card class="ma-4" @click="changeImg(index)">
-              <v-img
-                :src="item.src"
-                width="200"
-                height="200"
-                @click="toggle(index)"
-              >
-                <v-row class="fill-height">
-                  <v-scale-transition style="position: relative">
-                    <v-icon
-                      class="icon"
-                      v-if="hover"
-                      color="white"
-                      @click="deleteImg(index)"
-                      v-text="'mdi-close-circle-outline'"
-                    ></v-icon>
-                  </v-scale-transition>
-                </v-row>
-              </v-img>
-            </v-card>
-          </v-hover>
+          <v-card class="ma-4" @click="changeImg(index)">
+            <v-img
+              :src="item.src"
+              width="200"
+              height="200"
+              @click="toggle(index)"
+            >
+              <v-row class="fill-height">
+                <v-scale-transition style="position: relative">
+                  <v-icon
+                    class="icon"
+                    v-if="active"
+                    color="white"
+                    @click="deleteImg(index)"
+                    v-text="'mdi-close-circle-outline'"
+                  ></v-icon>
+                </v-scale-transition>
+              </v-row>
+            </v-img>
+          </v-card>
         </v-slide-item>
       </v-slide-group>
       <div class="d-flex input">
         <v-file-input
-            multiple
           v-model="file"
           accept="image/*"
           label="Image"
